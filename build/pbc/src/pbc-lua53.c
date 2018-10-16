@@ -14,9 +14,8 @@ extern "C" {
 #include <malloc.h>
 #endif
 
-#ifndef _MSC_VER
 #include <stdbool.h>
-#else
+#ifdef _MSC_VER
 #define alloca _alloca
 #endif
 
@@ -868,8 +867,8 @@ _add_rmessage(lua_State *L) {
 	return 0;
 }
 
-int
-luaopen_protobuf_c(lua_State *L) {
+LUALIB_API int
+luaopen_protobuf(lua_State *L) {
 	luaL_Reg reg[] = {
 		{"_env_new" , _env_new },
 		{"_env_register" , _env_register },
