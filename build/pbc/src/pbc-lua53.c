@@ -768,14 +768,15 @@ _decode(lua_State *L) {
 	luaL_checktype(L, 2 , LUA_TFUNCTION);
 	luaL_checktype(L, 3 , LUA_TTABLE);
 	const char * type = luaL_checkstring(L,4);
+	int offset = luaL_checkinteger(L,6);
 	struct pbc_slice slice;
 	if (lua_type(L,5) == LUA_TSTRING) {
 		size_t len;
-		slice.buffer = (void *)luaL_checklstring(L,5,&len);
+		slice.buffer = (void *)(luaL_checklstring(L,5,&len) + offset);
 		slice.len = (int)len;
 	} else {
-		slice.buffer = checkuserdata(L,5);
-		slice.len = luaL_checkinteger(L,6);
+		slice.buffer = (void*)((char*)checkuserdata(L,5) + offset);
+		slice.len = luaL_checkinteger(L,7);
 	}
 	lua_pushvalue(L, 2);
 	lua_pushvalue(L, 3);
