@@ -600,7 +600,7 @@ static void findloader (lua_State *L, const char *name) {
 
 static int ll_require (lua_State *L) {
   const char *name = luaL_checkstring(L, 1);
- int cache = TRUE;
+ int cache = 1;
   int top = 1;
   if(lua_isboolean(L, -2))
   {
