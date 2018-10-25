@@ -768,7 +768,7 @@ _decode(lua_State *L) {
 	luaL_checktype(L, 2 , LUA_TFUNCTION);
 	luaL_checktype(L, 3 , LUA_TTABLE);
 	const char * type = luaL_checkstring(L,4);
-	int offset = luaL_checkinteger(L,6);
+	int offset = lua_isnil(L, 6) ? 0 : luaL_checkinteger(L,6);
 	struct pbc_slice slice;
 	if (lua_type(L,5) == LUA_TSTRING) {
 		size_t len;
