@@ -601,13 +601,9 @@ static void findloader (lua_State *L, const char *name) {
 static int ll_require (lua_State *L) {
   const char *name = luaL_checkstring(L, 1);
  int cache = 1;
-  int top = 1;
-  if(lua_isboolean(L, -2))
-  {
-    top = 2;
-    cache = lua_toboolean(L, -2);
-  }  
-  lua_settop(L, top);  /* LOADED table will be at index 3 */
+  if(lua_isboolean(L, 2))
+    cache = lua_toboolean(L, 2);
+  lua_settop(L, 1);  /* LOADED table will be at index 2 */
   lua_getfield(L, LUA_REGISTRYINDEX, LUA_LOADED_TABLE);
   lua_getfield(L, 2, name);  /* LOADED[name] */
   if (lua_toboolean(L, -1))  /* is it there? */
