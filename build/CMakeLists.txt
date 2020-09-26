@@ -197,6 +197,17 @@ set_property(
 	LUA_COMPAT_APIINTCASTS LUA_LIB _CRT_SECURE_NO_WARNINGS _WINSOCK_DEPRECATED_NO_WARNINGS
 )
 
+#begin pbc
+set (PBC_SRC pbc/src/pbc-lua53.c pbc/src/alloc.c pbc/src/array.c pbc/src/bootstrap.c pbc/src/context.c pbc/src/decode.c pbc/src/map.c pbc/src/pattern.c pbc/src/proto.c pbc/src/register.c pbc/src/rmessage.c pbc/src/stringpool.c pbc/src/varint.c pbc/src/wmessage.c)
+set_property(
+	SOURCE ${PBC_SRC}
+	APPEND
+	PROPERTY COMPILE_DEFINITIONS
+	LUA_LIB
+)
+set (THIRDPART_SRC ${THIRDPART_SRC} ${PBC_SRC})
+#end pbc
+
 if(UINT_ESPECIALLY)
     ADD_DEFINITIONS(-DUINT_ESPECIALLY)
 endif()
