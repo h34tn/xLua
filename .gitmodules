@@ -1,0 +1,9 @@
+[submodule "build/pbc"]
+	path = build/pbc
+	url = https://github.com/cloudwu/pbc.git
+[submodule "build/lua-protobuf"]
+	path = build/lua-protobuf
+	url = https://github.com/starwing/lua-protobuf.git
+[submodule "build/lpeg"]
+	path = build/lpeg
+	url = https://github.com/LuaDist/lpeg.git
