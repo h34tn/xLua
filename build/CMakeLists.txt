@@ -24,7 +24,7 @@ option ( UINT_ESPECIALLY "using custom ulong" OFF )
 option ( USING_LUAJIT "using luajit" OFF )
 option ( GC64 "using gc64" OFF )
 option ( LUAC_COMPATIBLE_FORMAT "compatible format" OFF )
-option ( RapidJson "using rapidjson" OFF )
+option ( RapidJson "using rapidjson" ON )
 option ( PBC "using pbc" OFF )
 option ( LPeg "using lpeg" OFF )
 
