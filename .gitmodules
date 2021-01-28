@@ -3,7 +3,7 @@
 	url = https://github.com/h34tn/pbc.git
 [submodule "build/lua-protobuf"]
 	path = build/lua-protobuf
-	url = https://github.com/starwing/lua-protobuf.git
+	url = https://github.com/h34tn/lua-protobuf.git
 [submodule "build/lpeg"]
 	path = build/lpeg
 	url = https://github.com/h34tn/lpeg.git
